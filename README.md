@@ -18,7 +18,7 @@ Selector de fechas que maneja formatos ISO automáticamente, perfecto para integ
 ### 📤 FileUpload
 Componente de carga de archivos.
 ```html
-<lib-file-upload [texto]="'Guardar'"></lib-file-upload>
+<lib-file-upload></lib-file-upload>
 ```
 
 ### ✨ Características (Feature)
