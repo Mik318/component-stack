@@ -21,7 +21,7 @@ Componente de carga de archivos.
 <lib-boton [texto]="'Guardar'"></lib-boton>
 ```
 
-### ✨ Características
+### ✨ Características (Feature)
 - 🎨 **Paleta de colores vibrante** con gradientes sutiles
 - 🖌️ **Diseño moderno** con animaciones cuidadas
 - 📱 **Completamente responsive** en todos los dispositivos
