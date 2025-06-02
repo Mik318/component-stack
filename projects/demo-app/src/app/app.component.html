@@ -1,3 +1,28 @@
-<h1>App standalone</h1>
-<lib-boton></lib-boton>
-<lib-date-piker-iso [fechaControl]="fechaControl"></lib-date-piker-iso>
+<div class="components-showcase">
+  <header class="header">
+    <h1 class="title">Biblioteca de Componentes</h1>
+    <p class="subtitle">Colección de componentes reutilizables para Angular</p>
+  </header>
+
+  <div class="components-grid">
+    <div class="component-card">
+      <h2 class="component-title">Selector de Fecha</h2>
+      <div class="component-demo">
+        <lib-date-piker-iso [fechaControl]="fechaControl"></lib-date-piker-iso>
+      </div>
+      <p class="component-description">Selector de fecha con formato ISO</p>
+    </div>
+
+    <div class="component-card">
+      <h2 class="component-title">Carga de Archivos</h2>
+      <div class="component-demo">
+        <lib-file-upload></lib-file-upload>
+      </div>
+      <p class="component-description">Componente para subir y gestionar archivos</p>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Biblioteca personal de componentes Angular</p>
+  </footer>
+</div>

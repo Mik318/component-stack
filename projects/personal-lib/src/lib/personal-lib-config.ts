@@ -1,5 +1,5 @@
-import { InjectionToken, Provider } from '@angular/core';
-import { MATERIAL_SANITY_CHECKS } from '@angular/material/core';
+import {Provider} from '@angular/core';
+import {MATERIAL_SANITY_CHECKS} from '@angular/material/core';
 
 export const PERSONAL_LIB_PROVIDERS: Provider[] = [
   {
