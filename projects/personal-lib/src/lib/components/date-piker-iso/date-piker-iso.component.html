@@ -1,6 +1,6 @@
 <mat-form-field>
   <mat-label>Fecha</mat-label>
-  <input matInput [matDatepicker]="picker" formControlName="fechaControl">
+  <input matInput [matDatepicker]="picker" [formControl]="fechaControl">
   <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-  <mat-datepicker #picker></mat-datepicker>
+  <mat-datepicker #picker [dateClass]="dateClass"></mat-datepicker>
 </mat-form-field>

@@ -1,0 +1,297 @@
+:root {
+  /* Variables para colores */
+  --calendar-accent-color: rgba(0, 55, 100, 0.2);
+  --week-indicator-bg: transparent;
+  --border-color: rgba(0, 0, 0, 0.12);
+  --text-color-muted: rgba(0, 0, 0, 0.54);
+
+  /* Variables para dimensiones */
+  --sm-label-width: 22px;
+  --sm-label-height: 21.2px;
+  --sm-label-size: 11px;
+  --week-column-width: 35px;
+}
+
+::ng-deep .mat-datepicker-popup .mat-calendar-table:has(.show-iso-week) {
+  margin-left: 41px !important;
+}
+
+::ng-deep .mat-datepicker-popup .mat-datepicker-content .mat-calendar:has(.show-iso-week) {
+  margin-right: 51px !important;
+}
+
+::ng-deep .mat-datepicker-popup mat-month-view:has(.show-iso-week)::before {
+  background: transparent;
+  border-bottom: rgba(0, 0, 0, 0.12) 1px solid;
+  content: "Sm";
+  font-size: 11px;
+  color: rgba(0, 0, 0, 0.54);
+  position: absolute;
+  width: 22px;
+  height: 21.2px;
+  top: 74px;
+  margin-left: 10px;
+  padding-left: 1px;
+  padding-top: 1px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+::ng-deep .mat-datepicker-popup mat-month-view:has(.show-iso-week)::after {
+  border-right: rgba(0, 0, 0, 0.12) 1px solid;
+  content: " ";
+  position: absolute;
+  width: 35px;
+  height: 279px;
+  top: 75px;
+  margin-left: 5px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Estilos para los indicadores de número de semana */
+.show-iso-week::before {
+  position: absolute;
+  font-size: 10pt;
+  margin-left: -22px;
+  color: black;
+  top: 18px;
+  text-align: center;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Estilo común para todos los indicadores de semana en celdas */
+::ng-deep .mat-calendar-body-cell.show-iso-week::before,
+::ng-deep .mat-calendar-body-cell.show-iso-week.mat-calendar-body-selected::before,
+::ng-deep .mat-calendar-body-cell.show-iso-week.mat-calendar-body-in-range::before {
+  position: absolute !important;
+  font-size: 10pt !important;
+  left: -32px !important;
+  color: gray !important;
+  top: 11.7px !important;
+  text-align: center !important;
+  width: 20px !important;
+  z-index: 10 !important;
+  pointer-events: none !important;
+}
+
+/* Posicionamiento para primer día según día de la semana */
+::ng-deep .mat-calendar-body-cell.first-day-tuesday::before {
+  left: -72px !important;
+}
+
+::ng-deep .mat-calendar-body-cell.first-day-wednesday::before {
+  left: -112px !important;
+}
+
+::ng-deep .mat-calendar-body-cell.first-day-thursday::before {
+  left: -152px !important;
+}
+
+::ng-deep .mat-calendar-body-cell.first-day-friday::before {
+  left: -191px !important;
+}
+
+::ng-deep .mat-calendar-body-cell.first-day-saturday::before {
+  left: -232px !important;
+}
+
+::ng-deep .mat-calendar-body-cell.first-day-sunday::before {
+  left: -272px !important;
+}
+
+/* Mantener la misma posición para celdas seleccionadas */
+::ng-deep .mat-calendar-body-cell.first-day-tuesday.mat-calendar-body-selected::before,
+::ng-deep .mat-calendar-body-cell.first-day-tuesday.mat-calendar-body-in-range::before {
+  left: -72px !important;
+}
+
+::ng-deep .mat-calendar-body-cell.first-day-wednesday.mat-calendar-body-selected::before,
+::ng-deep .mat-calendar-body-cell.first-day-wednesday.mat-calendar-body-in-range::before {
+  left: -112px !important;
+}
+
+::ng-deep .mat-calendar-body-cell.first-day-thursday.mat-calendar-body-selected::before,
+::ng-deep .mat-calendar-body-cell.first-day-thursday.mat-calendar-body-in-range::before {
+  left: -152px !important;
+}
+
+::ng-deep .mat-calendar-body-cell.first-day-friday.mat-calendar-body-selected::before,
+::ng-deep .mat-calendar-body-cell.first-day-friday.mat-calendar-body-in-range::before {
+  left: -191px !important;
+}
+
+::ng-deep .mat-calendar-body-cell.first-day-saturday.mat-calendar-body-selected::before,
+::ng-deep .mat-calendar-body-cell.first-day-saturday.mat-calendar-body-in-range::before {
+  left: -232px !important;
+}
+
+::ng-deep .mat-calendar-body-cell.first-day-sunday.mat-calendar-body-selected::before,
+::ng-deep .mat-calendar-body-cell.first-day-sunday.mat-calendar-body-in-range::before {
+  left: -272px !important;
+}
+
+/* Reglas para celdas seleccionadas */
+::ng-deep .mat-calendar-body-selected,
+::ng-deep .mat-calendar-body-in-range,
+::ng-deep .mat-calendar-body-in-comparison-range {
+  position: relative;
+}
+
+/* IMPORTANTE: Prevenir sobreescritura de fondos */
+::ng-deep .mat-calendar-body-in-range::before {
+  background: inherit !important;
+}
+
+::ng-deep .mat-calendar-body-in-range::after {
+  background: var(--calendar-accent-color) !important;
+}
+
+::ng-deep .mat-calendar-body-label {
+  padding-left: 0;
+}
+
+/* Reglas específicas para las celdas seleccionadas */
+::ng-deep .mat-calendar-body-selected,
+::ng-deep .mat-calendar-body-in-range,
+::ng-deep .mat-calendar-body-in-comparison-range {
+  position: relative;
+}
+
+/* IMPORTANTE: Prevenir pintado */
+::ng-deep .mat-calendar-body-in-range::before {
+  background: inherit !important;
+}
+
+::ng-deep .mat-calendar-body-in-range::after {
+  background: rgba(0, 55, 100, 0.2) !important;
+}
+
+::ng-deep .mat-calendar-body-label {
+  padding-left: 0;
+}
+
+/* Estilos para fijar el calendario con tamaño específico */
+::ng-deep .calendario-fijo {
+  width: 357px !important;
+  height: 427px !important;
+  position: relative;
+  display: block;
+  padding: 10px;
+  border-radius: 8px;
+  background-color: white;
+  transform: none !important;
+  transition: none !important;
+  box-sizing: border-box;
+  z-index: 1;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-content {
+  width: 100%;
+  height: 100%;
+}
+
+::ng-deep .calendario-fijo mat-month-view {
+  height: auto;
+}
+
+::ng-deep .calendario-fijo mat-month-view::before {
+  background: var(--week-indicator-bg);
+  border-bottom: var(--border-color) 1px solid;
+  content: "Sm";
+  font-size: var(--sm-label-size);
+  color: var(--text-color-muted);
+  position: absolute;
+  width: var(--sm-label-width);
+  height: var(--sm-label-height);
+  top: 89px;
+  margin-left: 10px;
+  padding-left: 1px;
+  padding-top: 1px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+::ng-deep .calendario-fijo mat-month-view::after {
+  border-right: var(--border-color) 1px solid;
+  content: " ";
+  position: absolute;
+  width: var(--week-column-width);
+  height: 368px;
+  top: 75px;
+  margin-left: 5px;
+  pointer-events: none;
+  z-index: 1;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-table,
+::ng-deep .calendario-fijo .mat-calendar-header,
+::ng-deep .calendario-fijo .mat-calendar-body {
+  position: relative;
+  margin: 0 auto;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-table {
+  margin-left: 41px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.show-iso-week::before {
+  position: absolute !important;
+  left: -32px !important;
+  top: 15.7px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-tuesday::before {
+  left: -80px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-wednesday::before {
+  left: -128px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-thursday::before {
+  left: -177px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-friday::before {
+  left: -223px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-saturday::before {
+  left: -272px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-sunday::before {
+  left: -320px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-tuesday.mat-calendar-body-selected::before,
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-tuesday.mat-calendar-body-in-range::before {
+  left: -80px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-wednesday.mat-calendar-body-selected::before,
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-wednesday.mat-calendar-body-in-range::before {
+  left: -128px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-thursday.mat-calendar-body-selected::before,
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-thursday.mat-calendar-body-in-range::before {
+  left: -177px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-friday.mat-calendar-body-selected::before,
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-friday.mat-calendar-body-in-range::before {
+  left: -223px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-saturday.mat-calendar-body-selected::before,
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-saturday.mat-calendar-body-in-range::before {
+  left: -272px !important;
+}
+
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-sunday.mat-calendar-body-selected::before,
+::ng-deep .calendario-fijo .mat-calendar-body-cell.first-day-sunday.mat-calendar-body-in-range::before {
+  left: -320px !important;
+}

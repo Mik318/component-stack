@@ -16,7 +16,6 @@ import {FECHA_PROVIDERS} from "../../utils/FechaProviders";
 })
 export class DatePikerIsoComponent implements OnInit {
   @Input() fechaControl!: FormControl;
-  // Añadimos un control independiente para fecha
 
   dateClass: MatCalendarCellClassFunction<Date> = FechaUtils.dateClass;
 
