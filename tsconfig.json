@@ -16,6 +16,15 @@
     "experimentalDecorators": true,
     "moduleResolution": "node",
     "importHelpers": true,
+    "paths": {
+      "mi-libreria": [
+        "dist/mi-libreria"
+      ],
+      "personal-lib": [
+        "dist/personal-lib",
+        "./projects/personal-lib/src/public-api"
+      ]
+    },
     "target": "es2020",
     "module": "es2020",
     "lib": [
